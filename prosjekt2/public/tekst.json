@@ -1,0 +1,56 @@
+{
+    "haiku": {
+        "0": {
+            "author": "Matsuo Bashō",
+            "body": "From time to time The clouds give rest To the moon-beholders."
+        },
+        "1": {
+            "author": "Masaoaka Shiki",
+            "body": "Consider me As one who loved poetry And persimmons."
+        },
+        "2": {
+            "author": "Murakami Kijo",
+            "body": "First autumn morning the mirror I stare into shows my father's face."
+        },
+        "3": {
+            "author": "Natsume Soeki",
+            "body": "The lamp once out Cool stars enter The window frame."
+        }
+    },
+    "quotes": {
+        "0": {
+            "author": "Dr. Seuss",
+            "body": "Don't cry because it's over, smile because it happened."
+        },
+        "1": {
+            "author": "Oscar Wilde",
+            "body": "Be yourself; everyone else is already taken."
+        },
+        "2": {
+            "author": "Albert Einstein",
+            "body": "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe."
+        },
+        "3": {
+            "author": "Mae West",
+            "body": "You only live once, but if you do it right, once is enough."
+        }
+    },
+    "poems": {
+        "0": {
+            "author": "Robert Frost",
+            "body": "Some say the world will end in fire, Some say in ice. From what I’ve tasted of desire I hold with those who favor fire. But if it had to perish twice, I think I know enough of hate To say that for destruction ice Is also great And would suffice."
+        },
+        "1": {
+            "author": "Anaïs Nin",
+            "body": "And then the day came, when the risk to remain tight in a bud was more painful than the risk it took to Blossom."
+        },
+        "2": {
+            "author": "Joyce Kilmer",
+            "body": "I think that I shall never see A poem lovely as a tree. A tree whose hungry mouth is prest Against the earth’s sweet flowing breast; A tree that looks at God all day, And lifts her leafy arms to pray; A tree that may in Summer wear A nest of robins in her hair; Upon whose bosom snow has lain; Who intimately lives with rain. Poems are made by fools like me, But only God can make a tree."
+        },
+        "3": {
+            "author": "Emily Dickinson",
+            "body": "I'm nobody! Who are you? Are you nobody, too? Then there's a pair of us - don't tell! They'd banish us, you know. How dreary to be somebody! How public, like a frog To tell your name the livelong day To an admiring bog!"
+        }
+    }
+}
