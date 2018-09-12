@@ -39,16 +39,18 @@
 
 .Svgs {
   padding: 20px;
-  height: 500px;
+  height: ;
   grid-row: 1 / span 3;
 }
 
 .Txts {
-  grid-row: 1 / span 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .Sounds {
-  grid-row: 2 / span 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 
