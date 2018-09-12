@@ -38,6 +38,14 @@ class App extends Component {
       return this.state.text[category][index]
     }
 
+    handleClick = tabIndex => {
+      if (this.state.tabIndex !== tabIndex) {
+        this.setState({
+          tabIndex
+        })
+      }
+    }
+
     render() {
       // På load henter den korrekt tekst etter valgt kategori og tab
       const text = this.getText(this.state.textCategory, this.state.tabIndex);
@@ -47,18 +55,18 @@ class App extends Component {
                     <header className="App-header">
                         <h1 className="App-title"> Utstillingstittel </h1>
                     </header>
-                    <div className="Tabs">
+                    <button className="Tabs" onClick={() => this.handleClick(0)}>
                         <p> Tab 1 </p>
-                    </div>
-                    <div className="Tabs">
+                    </button>
+                    <button className="Tabs" onClick={() => this.handleClick(1)}>
                         <p> Tab 2</p>
-                    </div>
-                    <div className="Tabs">
+                    </button>
+                    <button className="Tabs" onClick={() => this.handleClick(2)}>
                         <p> Tab 3 </p>
-                    </div>
-                    <div className="Tabs">
+                    </button>
+                    <button className="Tabs" onClick={() => this.handleClick(3)}>
                         <p> Tab 4 </p>
-                    </div>
+                    </button>
                 </div>
 
                 <div className="C2">
