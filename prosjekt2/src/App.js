@@ -16,7 +16,7 @@ class App extends Component {
     fetchImage = (folder, filename) => {
         fetch(`SVG/${folder}/${filename}`)
     }
-    
+
     render() {
         return (
             <div className="App">
@@ -39,17 +39,15 @@ class App extends Component {
                 </div>
 
                 <div className="C2">
-
-                </div>
-
-                <div className="C3">
                     <div className="Svgs">
                         return fetchImage(Animal, Elephant_6711.svg);
                     </div>
 
                     <div className="Txts">
                         Tekst kommer her
-                        <br/>
+                    </div>
+
+                    <div className="Sounds">
                         Lyd kommer her
                     </div>
 
@@ -68,10 +66,6 @@ class App extends Component {
                     </div>
                 </div>
 
-                <div className="C4">
-                    <div className="Sounds">
-                    </div>
-                </div>
 
             </div>
         );

@@ -25,24 +25,16 @@
 }
 
 .C2 {
-  background-color: lightblue;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
-
-.C3 {
   background-color: lightgrey;
   padding: 10px;
   display: grid;
   grid-template-columns: auto auto auto;
 }
 
-.C4 {
-  background-color: lightyellow;
-  padding: 2  0px;
-  display: grid;
-  grid-template-columns: auto auto;
+.Tabs {
+  background-color: #93dda4;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .Svgs {
@@ -51,11 +43,15 @@
   grid-row: 1 / span 3;
 }
 
-.Tabs {
-  background-color: #93dda4;
-  border-style: solid;
-  border-width: 1px;
+.Txts {
+  grid-row: 1 / span 2;
 }
+
+.Sounds {
+  grid-row: 2 / span 3;
+}
+
+
 
 input[type="checkbox"] {
 
