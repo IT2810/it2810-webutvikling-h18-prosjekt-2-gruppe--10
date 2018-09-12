@@ -2,22 +2,45 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      textCategory: "haiku",
+      tabIndex: 0,
+      text: false
+    }
+  }
 
     componentDidMount = () => {
-        fetch("SVG/Animal/Elephant_6711.svg")
-            .then(function(response) {
-                return response.blob();
-            })
-            .then(function(myJson) {
-                console.log(myJson);
-            });
     }
 
     fetchImage = (folder, filename) => {
-        fetch(`SVG/${folder}/${filename}`)
+      fetch(`SVG/${folder}/${filename}`)
+    }
+
+    // ATM henter denne hele fila, men kun en gang.
+    // Skal høre med studass om fila burde deles opp elns
+    fetchText = () => {
+      fetch(`text.json`)
+      .then(response => response.json())
+      .then(json => {
+        this.setState({
+          text: json
+        })
+      })
+    }
+
+    getText = (category, index) => {
+      if (!this.state.text) {
+        this.fetchText()
+        return {}
+      }
+      return this.state.text[category][index]
     }
 
     render() {
+      // På load henter den korrekt tekst etter valgt kategori og tab
+      const text = this.getText(this.state.textCategory, this.state.tabIndex);
         return (
             <div className="App">
                 <div className="C1">
@@ -44,7 +67,8 @@ class App extends Component {
                     </div>
 
                     <div className="Txts">
-                        Tekst kommer her
+                      <p>{text.body}</p>
+                      <p>{text.author}</p>
                     </div>
 
                     <div className="Sounds">
@@ -55,10 +79,15 @@ class App extends Component {
                       <p> Animal </p> <input type="checkbox" name="animal" value="Animal"/>
                       <p> Food </p> <input type="checkbox" name="animal" value="Food"/>
                       <p> Transport </p> <input type="checkbox" name="animal" value="Transport"/>
-
-                      <p> Tekst </p> <input type="checkbox" name="animal" value="Tekst"/>
-                      <p> Tekst </p> <input type="checkbox" name="animal" value="Tekst"/>
-                      <p> Tekst </p> <input type="checkbox" name="animal" value="Tekst"/>
+                      
+                      {/* 
+                      Bare for testing av bytte av kategori egentlig.
+                      */}
+                      <form onChange={e => this.setState({textCategory: e.target.value})}>
+                        <input type="radio" name="gender" value="haiku" defaultChecked /> Haiku<br/>
+                        <input type="radio" name="gender" value="poems"/> Poems<br/>
+                        <input type="radio" name="gender" value="quotes"/> Quotes<br/>  
+                      </form>
 
                       <p> Lyd </p> <input type="checkbox" name="animal" value="Lyd"/>
                       <p> Lyd </p> <input type="checkbox" name="animal" value="Lyd"/>
