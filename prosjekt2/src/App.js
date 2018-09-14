@@ -15,6 +15,7 @@ class App extends Component {
           "Transport": {},
         }
       }
+    }
 
     componentDidMount = () => {}
 
@@ -64,7 +65,7 @@ class App extends Component {
           tabIndex
         })
       }
-    
+    }
       
     render() {
         const image = this.getImage(this.state.imageCategory, this.state.tabIndex)
