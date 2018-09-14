@@ -18,9 +18,7 @@ class App extends Component {
       }
     }
 
-    componentDidMount = () => {
-
-    }
+    componentDidMount = () => {}
 
     fetchImage = (folder, filename) => {
         fetch(`SVG/${folder}/${filename}.svg`)
@@ -31,8 +29,6 @@ class App extends Component {
           this.setState({
             image
           })
-          //let parser = new DOMParser();
-          //let doc = parser.parseFromString(text, "image/svg+xml");
         })
     }
 
@@ -41,7 +37,6 @@ class App extends Component {
         this.fetchImage(category, index)
         return false
       }
-
       return this.state.image[category][index]
     }
 
@@ -59,7 +54,6 @@ class App extends Component {
       return doc;
     }
 
-
     render() {
         const image = this.getImage(this.state.imageCategory, this.state.tabIndex)
         let svggg = "Bildet kommer her"
@@ -74,22 +68,22 @@ class App extends Component {
                     <h1 className="App-title"> Utstillingstittel </h1>
                 </header>
                 <button className="Tabs" onClick={() => this.handleClick(0)}>
-                    <p> Tab 1 </p>
+                    <p> Galleri 1 </p>
                 </button>
                 <button className="Tabs" onClick={() => this.handleClick(1)}>
-                    <p> Tab 2</p>
+                    <p> Galleri 2</p>
                 </button>
                 <button className="Tabs" onClick={() => this.handleClick(2)}>
-                    <p> Tab 3 </p>
+                    <p> Galleri 3 </p>
                 </button>
                 <button className="Tabs" onClick={() => this.handleClick(3)}>
-                    <p> Tab 4 </p>
+                    <p> Galleri 4 </p>
                 </button>
             </div>
 
                 <div className="C2">
                     <div className="Svgs">
-                        {image}
+                        <span dangerouslySetInnerHTML={{__html: image}} />
                     </div>
 
                     <div className="Txts">
@@ -101,20 +95,28 @@ class App extends Component {
                     </div>
 
                     <div className="Categor">
-                      <p> Animal </p> <input type="checkbox" name="animal" value="Animal"/>
-                      <p> Food </p> <input type="checkbox" name="animal" value="Food"/>
-                      <p> Transport </p> <input type="checkbox" name="animal" value="Transport"/>
+                      <p> Bilder </p>
+                      <form onChange={e => this.setState({imageCategory: e.target.value})}>
+                        <input type="radio" name="gender" value="Animal" defaultChecked /> Animal<br/>
+                        <input type="radio" name="gender" value="Food"/> Food<br/>
+                        <input type="radio" name="gender" value="Transport"/> Transport<br/>
+                      </form>
 
-                      <p> Tekst </p> <input type="checkbox" name="animal" value="Tekst"/>
-                      <p> Tekst </p> <input type="checkbox" name="animal" value="Tekst"/>
-                      <p> Tekst </p> <input type="checkbox" name="animal" value="Tekst"/>
+                      <p> Tekst </p>
+                      <form onChange={e => this.setState({textCategory: e.target.value})}>
+                        <input type="radio" name="gender" value="haiku" defaultChecked /> Haiku<br/>
+                        <input type="radio" name="gender" value="poems"/> Poems<br/>
+                        <input type="radio" name="gender" value="quotes"/> Quotes<br/>
+                      </form>
 
-                      <p> Lyd </p> <input type="checkbox" name="animal" value="Lyd"/>
-                      <p> Lyd </p> <input type="checkbox" name="animal" value="Lyd"/>
-                      <p> Lyd </p> <input type="checkbox" name="animal" value="Lyd"/>
+                      <p> Lyd </p>
+                      <form onChange={e => this.setState({soundCategory: e.target.value})}>
+                        <input type="radio" name="gender" value="animal" defaultChecked /> Animal<br/>
+                        <input type="radio" name="gender" value="horn"/> Horn<br/>
+                        <input type="radio" name="gender" value="laughter"/> Laughter<br/>
+                      </form>
                     </div>
                 </div>
-
 
             </div>
         );

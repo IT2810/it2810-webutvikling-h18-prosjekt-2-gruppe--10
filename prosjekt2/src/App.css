@@ -38,8 +38,7 @@
 }
 
 .Svgs {
-  padding: 20px;
-  height: ;
+  padding: 10px;
   grid-row: 1 / span 3;
 }
 
@@ -55,6 +54,6 @@
 
 
 
-input[type="checkbox"] {
+input[type="radio"] {
 
 }
