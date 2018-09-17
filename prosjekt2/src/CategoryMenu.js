@@ -24,16 +24,16 @@ const CategoryMenu = ({onChangeFunc}) => {
             <h3>Quote Category</h3>
             <form onChange={e => {onChangeFunc("textCategory", e.target.value)}}>
                 <p>
-                    <input type="radio" id="text1" name="radio-group" value="haiku" defaultChecked />
-                    <label for="text1">Haiku</label>
+                    <input type="radio" id="text1" name="radio-group" value="inspo" defaultChecked />
+                    <label for="text1">Inspirational</label>
                 </p>
                 <p>
-                    <input type="radio" id="text2" name="radio-group" value="quotes" />
-                    <label for="text2">Quotes</label>
+                    <input type="radio" id="text2" name="radio-group" value="romance" />
+                    <label for="text2">Romance</label>
                 </p>
                 <p>
-                    <input type="radio" id="text3" name="radio-group" value="poems" />
-                    <label for="text3">Poems</label>
+                    <input type="radio" id="text3" name="radio-group" value="science" />
+                    <label for="text3">Science</label>
                 </p>
             </form>
 
