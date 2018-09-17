@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CategoryMenu from './CategoryMenu';
 import "./App.css";
 
 class App extends Component {
@@ -68,6 +69,12 @@ class App extends Component {
     }
   };
 
+  handleCategoryChange = (category, value) => {
+    this.setState({
+      [category]: value
+    })
+  }
+
   render() {
     const image = this.getImage(this.state.imageCategory, this.state.tabIndex);
 
@@ -114,46 +121,7 @@ class App extends Component {
             />
           </div>
 
-          <div className="Categories">
-            <p> Bilder </p>
-            <form
-              onChange={e => this.setState({ imageCategory: e.target.value })}
-            >
-              <input type="radio" name="gender" value="Animal" defaultChecked />{" "}
-              Animal
-              <br />
-              <input type="radio" name="gender" value="Food" /> Food
-              <br />
-              <input type="radio" name="gender" value="Transport" /> Transport
-              <br />
-            </form>
-
-            <p> Tekst </p>
-            <form
-              onChange={e => this.setState({ textCategory: e.target.value })}
-            >
-              <input type="radio" name="gender" value="haiku" defaultChecked />{" "}
-              Haiku
-              <br />
-              <input type="radio" name="gender" value="poems" /> Poems
-              <br />
-              <input type="radio" name="gender" value="quotes" /> Quotes
-              <br />
-            </form>
-
-            <p> Lyd </p>
-            <form
-              onChange={e => this.setState({ soundCategory: e.target.value })}
-            >
-              <input type="radio" name="gender" value="animal" defaultChecked />{" "}
-              Animal
-              <br />
-              <input type="radio" name="gender" value="horn" /> Horn
-              <br />
-              <input type="radio" name="gender" value="laughter" /> Laughter
-              <br />
-            </form>
-          </div>
+          <CategoryMenu onChangeFunc={this.handleCategoryChange}/>
         </div>
       </div>
     );
