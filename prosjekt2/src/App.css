@@ -25,10 +25,9 @@
 }
 
 .C2 {
-  background-color: ;
-  padding: 10px;
+  background-color: lightgrey;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto max-content;
 }
 
 .active {
@@ -56,4 +55,80 @@
 .Sounds {
   grid-row-start: 2;
   grid-row-end: 3;
+}
+
+.Categories {
+  background-color: #222;
+  color: white;
+  grid-row: 1/span 2;
+  text-align: left;
+  max-width: 200px
+}
+
+.Categories h3 {
+  margin: 20px;
+}
+
+.Categories p {
+  margin: 20px;
+}
+
+form {
+  margin-bottom: 40px;
+}
+
+/* Inspiration from a codepen*/
+/* Added comments to show that the code is understood */
+/* https://codepen.io/manabox/pen/raQmpL */
+
+/* Removes stock radio button */
+[type="radio"] {
+  display: none;
+}
+
+/* Styles the labels */
+label {
+  position: relative;
+  display: inline-block;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+/* Custom radio button */
+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+
+/* Circle inside radio button */
+label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #93dda4;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Animation for uncheck */
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+/*  Animation for check */
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
 }
