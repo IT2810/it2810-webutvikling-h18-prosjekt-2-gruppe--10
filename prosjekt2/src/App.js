@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import TabMenu from "./TabMenu.js";
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends Component {
 
   componentDidMount = () => {};
 
+  // Henter inn bildet og legger det i en lagret state
   fetchImage = (category, index) => {
     fetch(`SVG/${category}/${index}.svg`)
       .then(response => response.text())
@@ -32,6 +34,7 @@ class App extends Component {
       });
   };
 
+  // Sjekker om bildet er blitt lastet inn før, hvis ikke fetcher den bildet
   getImage = (category, index) => {
     if (!this.state.image[category][index]) {
       this.fetchImage(category, index);
@@ -40,8 +43,7 @@ class App extends Component {
     return this.state.image[category][index];
   };
 
-  // ATM henter denne hele fila, men kun en gang.
-  // Skal høre med studass om fila burde deles opp elns
+  // Henter inn tekstfila og legger den i en lagret state
   fetchText = () => {
     fetch(`text.json`)
       .then(response => response.json())
@@ -52,6 +54,7 @@ class App extends Component {
       });
   };
 
+  // Sjekker om tekstfila har blitt hentet før, hvis ikke fetcher den fila
   getText = (category, index) => {
     if (!this.state.text) {
       this.fetchText();
@@ -60,6 +63,7 @@ class App extends Component {
     return this.state.text[category][index];
   };
 
+  // Brukes når en tab endres for å skifte index til hvilket medie som skal vises
   handleClick = tabIndex => {
     if (this.state.tabIndex !== tabIndex) {
       this.setState({
@@ -69,30 +73,14 @@ class App extends Component {
   };
 
   render() {
+    // På load henter den korrekt bilde etter valgt kategori og tab
     const image = this.getImage(this.state.imageCategory, this.state.tabIndex);
-
     // På load henter den korrekt tekst etter valgt kategori og tab
     const text = this.getText(this.state.textCategory, this.state.tabIndex);
 
     return (
       <div className="App">
-        <div className="C1">
-          <header className="App-header">
-            <h1 className="App-title"> Utstillingstittel </h1>
-          </header>
-          <button className="Tabs" onClick={() => this.handleClick(0)}>
-            <p> Galleri 1 </p>
-          </button>
-          <button className="Tabs" onClick={() => this.handleClick(1)}>
-            <p> Galleri 2</p>
-          </button>
-          <button className="Tabs" onClick={() => this.handleClick(2)}>
-            <p> Galleri 3 </p>
-          </button>
-          <button className="Tabs" onClick={() => this.handleClick(3)}>
-            <p> Galleri 4 </p>
-          </button>
-        </div>
+        <TabMenu />
 
         <div className="C2">
           <div className="Svgs">
@@ -105,13 +93,8 @@ class App extends Component {
           </div>
 
           <div className="Sounds">
-            <audio
-              ref="audio_tag"
-              src={`sound/${this.state.soundCategory}/${
-                this.state.tabIndex
-              }.mp3`}
-              controls
-            />
+            {/* På load henter den ut korrekt lydfil etter valgt kategori og tab */}
+            <audio ref="audio_tag" src={`sound/${this.state.soundCategory}/${this.state.tabIndex}.mp3`} controls/>
           </div>
 
           <div className="Categories">
