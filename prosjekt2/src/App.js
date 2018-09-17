@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CategoryMenu from './CategoryMenu';
 import "./App.css";
 import TabMenu from "./TabMenu.js";
 
@@ -72,6 +73,12 @@ class App extends Component {
     }
   };
 
+  handleCategoryChange = (category, value) => {
+    this.setState({
+      [category]: value
+    })
+  }
+
   render() {
     // På load henter den korrekt bilde etter valgt kategori og tab
     const image = this.getImage(this.state.imageCategory, this.state.tabIndex);
@@ -97,46 +104,7 @@ class App extends Component {
             <audio ref="audio_tag" src={`sound/${this.state.soundCategory}/${this.state.tabIndex}.mp3`} controls/>
           </div>
 
-          <div className="Categories">
-            <p> Bilder </p>
-            <form
-              onChange={e => this.setState({ imageCategory: e.target.value })}
-            >
-              <input type="radio" name="gender" value="Animal" defaultChecked />{" "}
-              Animal
-              <br />
-              <input type="radio" name="gender" value="Food" /> Food
-              <br />
-              <input type="radio" name="gender" value="Transport" /> Transport
-              <br />
-            </form>
-
-            <p> Tekst </p>
-            <form
-              onChange={e => this.setState({ textCategory: e.target.value })}
-            >
-              <input type="radio" name="gender" value="haiku" defaultChecked />{" "}
-              Haiku
-              <br />
-              <input type="radio" name="gender" value="poems" /> Poems
-              <br />
-              <input type="radio" name="gender" value="quotes" /> Quotes
-              <br />
-            </form>
-
-            <p> Lyd </p>
-            <form
-              onChange={e => this.setState({ soundCategory: e.target.value })}
-            >
-              <input type="radio" name="gender" value="animal" defaultChecked />{" "}
-              Animal
-              <br />
-              <input type="radio" name="gender" value="horn" /> Horn
-              <br />
-              <input type="radio" name="gender" value="laughter" /> Laughter
-              <br />
-            </form>
-          </div>
+          <CategoryMenu onChangeFunc={this.handleCategoryChange}/>
         </div>
       </div>
     );
