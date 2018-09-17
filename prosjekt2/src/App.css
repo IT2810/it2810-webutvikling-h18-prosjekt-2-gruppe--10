@@ -5,7 +5,7 @@
 .App-header {
   grid-column-start: 1;
   grid-column-end: 5;
-  background-color: #222;
+  background-color: #032336;
   height: 75px;
   padding: 20px;
   color: white;
@@ -30,10 +30,16 @@
   grid-template-columns: auto auto max-content;
 }
 
-.Tabs {
-  background-color: #93dda4;
-  border-style: solid;
-  border-width: 1px;
+.active {
+  background-color: #477187;
+  font-size: 13px;
+  outline: none;
+}
+
+.inactive {
+  background-color: #6F8FA2;
+  font-size: 13px;
+  outline: none;
 }
 
 .Svgs {
@@ -50,7 +56,6 @@
   grid-row-start: 2;
   grid-row-end: 3;
 }
-
 
 .Categories {
   background-color: #222;
