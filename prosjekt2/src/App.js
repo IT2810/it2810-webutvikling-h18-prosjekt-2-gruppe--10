@@ -8,10 +8,14 @@ class App extends Component {
     super(props);
     this.state = {
       imageCategory: "Animal",
-      textCategory: "haiku",
+      textCategory: "inspo",
       soundCategory: "animal",
       tabIndex: 0,
-      text: false,
+      text: {
+        inspo: {},
+        romance: {},
+        science: {}
+      },
       image: {
         Animal: {},
         Food: {},
@@ -45,21 +49,23 @@ class App extends Component {
   };
 
   // Henter inn tekstfila og legger den i en lagret state
-  fetchText = () => {
-    fetch(`text.json`)
+  fetchText = (category) => {
+    fetch(`text/${category}.json`)
       .then(response => response.json())
       .then(json => {
+        let text = this.state.text
+        text[category] = json
         this.setState({
-          text: json
+          text
         });
       });
   };
 
   // Sjekker om tekstfila har blitt hentet før, hvis ikke fetcher den fila
   getText = (category, index) => {
-    if (!this.state.text) {
-      this.fetchText();
-      return {};
+    if (!this.state.text[category][index]) {
+      this.fetchText(category, index);
+      return false;
     }
     return this.state.text[category][index];
   };
