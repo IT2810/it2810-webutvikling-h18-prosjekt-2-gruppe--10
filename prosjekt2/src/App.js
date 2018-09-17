@@ -80,7 +80,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <TabMenu />
+        <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex}/>
 
         <div className="C2">
           <div className="Svgs">
