@@ -85,6 +85,7 @@
   display: flex;
   flex-flow: column wrap; 
   justify-content: center;
+  width: 80%;
 }
 
 .sound {
@@ -96,6 +97,7 @@
 
 .text p {
   font-size: 24px;
+  margin: 10px;
 }
 
 /* ***** MOBIL ****** */
@@ -116,7 +118,7 @@
     top: 100px;
   }
 
-  .hidden {
+  .categories.hidden {
     display: none;
   }
 
@@ -144,6 +146,9 @@
 
 /****** CATEGORIES ******/
 .categories {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   background-color: #032336;
   color: white;
   grid-column: 1;
@@ -163,8 +168,8 @@
   margin: 20px;
 }
 
-form {
-  margin-bottom: 40px;
+.categories form {
+  margin-bottom: 20px;
 }
 
 /* Inspiration from a codepen*/
