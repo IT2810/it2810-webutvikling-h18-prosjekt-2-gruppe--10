@@ -92,16 +92,15 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-        <div className="mobileMenuButton" onClick={() => this.setState({showMobileMenu: !this.state.showMobileMenu})}/>
-
-          <h1 className="App-title"> Utstillingstittel </h1>
+          <div className={this.state.showMobileMenu ? "mobileMenuButton open" : "mobileMenuButton"} onClick={() => this.setState({showMobileMenu: !this.state.showMobileMenu})}/>
+          <h1 className="App-title"> Project 2 </h1>
         </div>
         <CategoryMenu showInMobile={this.state.showMobileMenu} onChangeFunc={this.handleCategoryChange}/>
         <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex}/>
 
         <div className="contentContainer">
           <div className="image"
-            dangerouslySetInnerHTML={{ __html: image }}
+            dangerouslySetInnerHTML={{ __html: image ? image : "Loading" }}
           />
 
           <div className="text">

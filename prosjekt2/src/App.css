@@ -79,6 +79,10 @@
   grid-column: 1;
 }
 
+.image svg {
+  max-height: 650px;
+}
+
 .text {
   grid-row: 1;
   grid-column: 2;
@@ -114,10 +118,11 @@
     width: 200px;
     z-index: 2;
     top: 100px;
+    left: -200px;
   }
 
-  .categories.hidden {
-    display: none;
+  .categories.open {
+    left: 0px;
   }
 
   .tabContainer {
@@ -137,9 +142,8 @@
     grid-template-rows: max-content max-content 1fr 100px;
   }
 
-  .image {
+  .image svg{
     max-height: 500px;
-    max-width: 70%;
   }
 
   .text {
@@ -164,7 +168,9 @@
   grid-column: 1;
   grid-row: 2 / span 2;
   text-align: left;
-  max-width: 200px
+  max-width: 200px;
+  transition: all 0.3s ease;
+
 }
 
 .categories h3 {
