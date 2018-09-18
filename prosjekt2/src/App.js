@@ -10,6 +10,7 @@ class App extends Component {
       imageCategory: "Animal",
       textCategory: "inspo",
       soundCategory: "animal",
+      showMenu: false,
       tabIndex: 0,
       text: {
         inspo: {},
@@ -86,6 +87,8 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.showMenu)
+
     // På load henter den korrekt bilde etter valgt kategori og tab
     const image = this.getImage(this.state.imageCategory, this.state.tabIndex);
     // På load henter den korrekt tekst etter valgt kategori og tab
@@ -93,24 +96,28 @@ class App extends Component {
 
     return (
       <div className="App">
+        <div className="App-header">
+        <div className="mobileMenuButton" onClick={() => this.setState({showMenu: !this.state.showMenu})}/>
+
+          <h1 className="App-title"> Utstillingstittel </h1>
+        </div>
+        <CategoryMenu show={this.state.showMenu} onChangeFunc={this.handleCategoryChange}/>
         <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex}/>
 
-        <div className="C2">
-          <div className="Svgs">
-            <span dangerouslySetInnerHTML={{ __html: image }} />
+        <div className="contentContainer">
+          <div className="image"
+            dangerouslySetInnerHTML={{ __html: image }}
+          />
+
+          <div className="text">
+            <p><i>{text.body}</i></p>
+            <p><b>{text.author}</b></p>
           </div>
 
-          <div className="Txts">
-            <p>{text.body}</p>
-            <p>{text.author}</p>
-          </div>
-
-          <div className="Sounds">
+          <div className="sound">
             {/* På load henter den ut korrekt lydfil etter valgt kategori og tab */}
             <audio ref="audio_tag" src={`sound/${this.state.soundCategory}/${this.state.tabIndex}.mp3`} controls/>
           </div>
-
-          <CategoryMenu onChangeFunc={this.handleCategoryChange}/>
         </div>
       </div>
     );
