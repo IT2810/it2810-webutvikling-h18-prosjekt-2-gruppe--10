@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
 
-const CategoryMenu = ({show, onChangeFunc}) => {
+const CategoryMenu = ({showInMobile, onChangeFunc}) => {
 
     return (
         
-        <div className={show ? "categories" : "categories hidden"}>
+        <div className={showInMobile ? "categories" : "categories hidden"}>
             <h3>Image Category</h3>
             <form onChange={e => {onChangeFunc("imageCategory", e.target.value)}}>
                 <p>

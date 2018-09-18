@@ -10,7 +10,7 @@ class App extends Component {
       imageCategory: "Animal",
       textCategory: "inspo",
       soundCategory: "animal",
-      showMenu: false,
+      showMobileMenu: false,
       tabIndex: 0,
       text: {
         inspo: {},
@@ -24,8 +24,6 @@ class App extends Component {
       }
     };
   }
-
-  componentDidMount = () => {};
 
   // Henter inn bildet og legger det i en lagret state
   fetchImage = (category, index) => {
@@ -87,21 +85,18 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.showMenu)
-
-    // På load henter den korrekt bilde etter valgt kategori og tab
+    // På load henter den korrekt bilde og tekst etter valgt kategori og tab
     const image = this.getImage(this.state.imageCategory, this.state.tabIndex);
-    // På load henter den korrekt tekst etter valgt kategori og tab
     const text = this.getText(this.state.textCategory, this.state.tabIndex);
 
     return (
       <div className="App">
         <div className="App-header">
-        <div className="mobileMenuButton" onClick={() => this.setState({showMenu: !this.state.showMenu})}/>
+        <div className="mobileMenuButton" onClick={() => this.setState({showMobileMenu: !this.state.showMobileMenu})}/>
 
           <h1 className="App-title"> Utstillingstittel </h1>
         </div>
-        <CategoryMenu show={this.state.showMenu} onChangeFunc={this.handleCategoryChange}/>
+        <CategoryMenu showInMobile={this.state.showMobileMenu} onChangeFunc={this.handleCategoryChange}/>
         <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex}/>
 
         <div className="contentContainer">
