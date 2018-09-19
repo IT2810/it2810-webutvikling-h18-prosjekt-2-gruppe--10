@@ -3,8 +3,8 @@ import "./App.css";
 import CategoryMenu from './components/CategoryMenu';
 import TabMenu from "./components/TabMenu";
 import Sound from "./components/Sound";
-import ImageComp from "./components/Image"
-import TextComp from "./components/Text"
+import Image from "./components/Image"
+import Text from "./components/Text"
 
 
 class App extends Component {
@@ -108,8 +108,8 @@ class App extends Component {
 
         {/* Komponenter for medier */}
         <div className="contentContainer">
-          <ImageComp image={image}/>
-          <TextComp text={text}/>
+          <Image image={image}/>
+          <Text text={text}/>
           <Sound category={this.state.soundCategory} filename={this.state.tabIndex} />
         </div>
 
