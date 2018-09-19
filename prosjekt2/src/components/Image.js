@@ -1,6 +1,6 @@
 import React from "react";
 
-const ImageComp = ({image}) => {
+const Image = ({image}) => {
 
   // Setter teksten til svg-filen rett inn i HTML-strukturen
   return (
@@ -10,4 +10,4 @@ const ImageComp = ({image}) => {
   )
 }
 
-export default ImageComp;
+export default Image;

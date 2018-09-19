@@ -1,6 +1,6 @@
 import React from "react";
 
-const TextComp = ({text}) => {
+const Text = ({text}) => {
 
   return (
     <div className="text">
@@ -10,4 +10,4 @@ const TextComp = ({text}) => {
   )
 }
 
-export default TextComp;
+export default Text;

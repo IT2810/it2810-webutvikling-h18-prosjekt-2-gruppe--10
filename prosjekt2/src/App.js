@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import CategoryMenu from './CategoryMenu';
-import TabMenu from "./TabMenu.js";
-import Sound from "./Sound.js";
-import ImageComp from "./ImageComp.js"
-import TextComp from "./TextComp.js"
+import CategoryMenu from './components/CategoryMenu';
+import TabMenu from "./components/TabMenu";
+import Sound from "./components/Sound";
+import ImageComp from "./components/Image"
+import TextComp from "./components/Text"
 
 
 class App extends Component {
