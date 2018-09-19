@@ -55,7 +55,7 @@ Før vi henter bildet eller teksten sjekker vi om de ligger i state, om de gjør
 
 * Det meste av funksjonaliteten er kodet i app.js. Noe er likevel laget i eksterne filer for så og bli importert som komponent til app.js, som blant annet side-baren som har fått navn "CategoryMenu.js". Dette har vi gjort med tanke på ryddighet i koden. 
 
-**Testing**
+## Testing
 
 * Det har vært et holdepunkt underveis i denne utviklerprosessen at nettsiden skal være responsiv, dermed har vi jevnlig testet for skalering på andre enheter med ulik skjermstørrelse ved hjelp av "device toolbar" i inspiser-vindu i nettleseren(chrome). Dette har gjort at vi har hatt kontroll på hvordan ønsket oppførsel skulle være for de ulike enhetene/skjermstørrelse. Den største variasjonen i oppførsel er at sidemenyen formes til en “hamburger menu” ved nedskalering til mobil-størrelse. 
 
