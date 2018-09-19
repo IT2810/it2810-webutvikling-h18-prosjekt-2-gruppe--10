@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CategoryMenu from './CategoryMenu';
 import "./App.css";
 import TabMenu from "./TabMenu.js";
+import Sound from "./Sound.js";
 
 class App extends Component {
   constructor(props) {
@@ -92,11 +93,11 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <div className={this.state.showMobileMenu ? "mobileMenuButton open" : "mobileMenuButton"} onClick={() => this.setState({showMobileMenu: !this.state.showMobileMenu})}/>
+          <div className={this.state.showMobileMenu ? "mobileMenuButton open" : "mobileMenuButton"} onClick={() => this.setState({ showMobileMenu: !this.state.showMobileMenu })} />
           <h1 className="App-title"> Project 2 </h1>
         </div>
-        <CategoryMenu showInMobile={this.state.showMobileMenu} onChangeFunc={this.handleCategoryChange}/>
-        <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex}/>
+        <CategoryMenu showInMobile={this.state.showMobileMenu} onChangeFunc={this.handleCategoryChange} />
+        <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex} />
 
         <div className="contentContainer">
           <div className="image"
@@ -108,10 +109,8 @@ class App extends Component {
             <p><b>{text.author}</b></p>
           </div>
 
-          <div className="sound">
-            {/* På load henter den ut korrekt lydfil etter valgt kategori og tab */}
-            <audio ref="audio_tag" src={`sound/${this.state.soundCategory}/${this.state.tabIndex}.mp3`} controls/>
-          </div>
+          {/* På load henter den ut korrekt lydfil etter valgt kategori og tab */}
+          <Sound category={this.state.soundCategory} filename={this.state.tabIndex} />
         </div>
       </div>
     );
