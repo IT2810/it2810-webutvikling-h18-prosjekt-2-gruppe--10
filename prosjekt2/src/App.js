@@ -4,6 +4,7 @@ import CategoryMenu from './CategoryMenu';
 import TabMenu from "./TabMenu.js";
 import Sound from "./Sound.js";
 import ImageComp from "./ImageComp.js"
+import TextComp from "./TextComp.js"
 
 
 class App extends Component {
@@ -99,22 +100,19 @@ class App extends Component {
           <div className={this.state.showMobileMenu ? "mobileMenuButton open" : "mobileMenuButton"} onClick={() => this.setState({ showMobileMenu: !this.state.showMobileMenu })} />
           <h1 className="App-title"> Project 2 </h1>
         </div>
+
         {/* Komponent som henter inn medievalgene fra CategoryMenu */}
         <CategoryMenu showInMobile={this.state.showMobileMenu} onChangeFunc={this.handleCategoryChange}/>
         {/* Komponent som henter inn tabsene fra TabMenu */}
         <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex}/>
 
+        {/* Komponenter for medier */}
         <div className="contentContainer">
           <ImageComp image={image}/>
-
-          <div className="text">
-            <p><i>{text.body}</i></p>
-            <p><b>{text.author}</b></p>
-          </div>
-
-          {/* På load henter den ut korrekt lydfil etter valgt kategori og tab */}
+          <TextComp text={text}/>
           <Sound category={this.state.soundCategory} filename={this.state.tabIndex} />
         </div>
+
       </div>
     );
   }
