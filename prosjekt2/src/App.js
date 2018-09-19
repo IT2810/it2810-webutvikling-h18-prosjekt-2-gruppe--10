@@ -10,6 +10,7 @@ class App extends Component {
       imageCategory: "Animal",
       textCategory: "inspo",
       soundCategory: "animal",
+      showMobileMenu: false,
       tabIndex: 0,
       text: {
         inspo: {},
@@ -23,8 +24,6 @@ class App extends Component {
       }
     };
   }
-
-  componentDidMount = () => {};
 
   // Henter inn bildet og legger det i en lagret state
   fetchImage = (category, index) => {
@@ -86,31 +85,33 @@ class App extends Component {
   }
 
   render() {
-    // På load henter den korrekt bilde etter valgt kategori og tab
+    // På load henter den korrekt bilde og tekst etter valgt kategori og tab
     const image = this.getImage(this.state.imageCategory, this.state.tabIndex);
-    // På load henter den korrekt tekst etter valgt kategori og tab
     const text = this.getText(this.state.textCategory, this.state.tabIndex);
 
     return (
       <div className="App">
+        <div className="App-header">
+          <div className={this.state.showMobileMenu ? "mobileMenuButton open" : "mobileMenuButton"} onClick={() => this.setState({showMobileMenu: !this.state.showMobileMenu})}/>
+          <h1 className="App-title"> Project 2 </h1>
+        </div>
+        <CategoryMenu showInMobile={this.state.showMobileMenu} onChangeFunc={this.handleCategoryChange}/>
         <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex}/>
 
-        <div className="C2">
-          <div className="Svgs">
-            <span dangerouslySetInnerHTML={{ __html: image }} />
+        <div className="contentContainer">
+          <div className="image"
+            dangerouslySetInnerHTML={{ __html: image ? image : "Loading" }}
+          />
+
+          <div className="text">
+            <p><i>{text.body}</i></p>
+            <p><b>{text.author}</b></p>
           </div>
 
-          <div className="Txts">
-            <p>{text.body}</p>
-            <p>{text.author}</p>
-          </div>
-
-          <div className="Sounds">
+          <div className="sound">
             {/* På load henter den ut korrekt lydfil etter valgt kategori og tab */}
             <audio ref="audio_tag" src={`sound/${this.state.soundCategory}/${this.state.tabIndex}.mp3`} controls/>
           </div>
-
-          <CategoryMenu onChangeFunc={this.handleCategoryChange}/>
         </div>
       </div>
     );

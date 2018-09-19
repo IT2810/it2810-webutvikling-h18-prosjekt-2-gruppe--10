@@ -3,25 +3,21 @@ import React from "react";
 const TabMenu = ({handleClick, activeTab}) => {
 
     return (
-      <div className="C1">
-        <header className="App-header">
-          <h1 className="App-title"> Utstillingstittel </h1>
-        </header>
-
+      <div className="tabContainer">
         <button className={activeTab === 0 ? "active" : "inactive"} onClick={() => handleClick(0)} >
-          <p> Galleri 1 </p>
+          Gallery 1
         </button>
 
         <button className={activeTab === 1 ? "active" : "inactive"} onClick={() => handleClick(1)}>
-          <p> Galleri 2</p>
+          Gallery 2
         </button>
 
         <button className={activeTab === 2 ? "active" : "inactive"} onClick={() => handleClick(2)}>
-          <p> Galleri 3 </p>
+          Gallery 3
         </button>
 
         <button className={activeTab === 3 ? "active" : "inactive"} onClick={() => handleClick(3)} >
-          <p> Galleri 4 </p>
+          Gallery 4
         </button>
       </div>
     )
