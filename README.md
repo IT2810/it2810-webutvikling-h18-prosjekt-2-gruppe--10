@@ -1,9 +1,6 @@
 # IT2810 Webutvikling H2018 Prosjekt-2 Gruppe 10
 ## Krav til funksjon
 
-* * *
-
-
 **Design/Layout**
 
 * Vi valgte å gå for en layout som ligner veldig på den foreslåtte, dette fordi den virket som et greit alternativ som ikke skulle være alt for komplisert å implementere. I widescreen tenkte vi det var best å vise utstillingen på en rad, siden man på den måten får mest innhold uten å måtte scrolle. På nettbrett og mobil gjør derimot vertikale skjermer at det gir mer mening å legge innholdet nedover, slik at scrolling er nødvendig. Dette for å kunne beholde en viss størrelse på mediene for brukeren.
@@ -17,9 +14,6 @@
 * Bilder, tekst og lyd er hentet helt uavhengig av hverandre. Vi er tre personer som jobber på dette prosjektet, derfor ble det et naturlig valg at en person hentet bilder, en annen hentet tekst og den siste hentet lyd. Alle mediene ble lagt inn egne mapper i filstrukturen for å lettest hente de ut etter ønsket kategori. Dette samt å sette opp en standard react-app, var det første som ble gjort. Disse mediefilene er hentet fra ulike gratis-nettsider med tanke på at siden til tider kan være åpen.
 
 ## Krav til teknologi
-
-* * *
-
 
 **React:**
 
@@ -66,9 +60,6 @@ Før vi henter bildet eller teksten sjekker vi om de ligger i state, om de gjør
 * Testet for mobiler med tregt nett hvor bildene tar lenger tid for å lastes inn, ved å teste dette fant vi ut at når bildet skal fetches kommer ikke dette opp ved treg 3G med det første. Hvis det hadde vært mer relevant for denne oppgaven ville vi valgt å gjøre endringer for å gi bruker best opplevelse mens man venter.
 
 ## Kilder
-
-* * *
-
 
 SVG:
 
