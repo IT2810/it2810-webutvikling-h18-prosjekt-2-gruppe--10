@@ -27,11 +27,13 @@
 
 **ES6:**
 
-* Vi skrev alle våre funksjoner som "public class field" i ES6-notasjon, altså som felter inn i App-klassen, dette gjør at scopet er mye lettere å holde styr på og man slipper å binde funksjonene. Grunnen til at man slipper å binde disse arrow-funksjonene er at de ikke har egen *this *og siden de er skrevet inne i klassen så refererer *this* til den. 
+* Vi skrev alle våre funksjoner som "public class field" i ES6-notasjon, altså som felter inn i App-klassen, dette gjør at scopet er mye lettere å holde styr på og man slipper å binde funksjonene. Grunnen til at man slipper å binde disse arrow-funksjonene er at de ikke har egen *this og siden de er skrevet inne i klassen så refererer *this* til den. 
 
 **Ajax:**
 
 * Til å utføre Ajax-kall brukte vi Fetch-apiet siden det er innebygget og har god støtte hos alle de store nettleserne. Dette funket fint for å hente teksten siden den var lagret i JSON, noe APIet kan tolke. Men for SVG-ene i XML-kode måtte vi tolke det som klartekst for så å "dangerouslySetInnerHTML", som er måten man setter innerHTML i React. Grunnen til at det heter dangerously er at det kan åpne brukerne for XSS-angrep, kort forklart et av de aller vanligste angrepene nettbrukere er utsatt for.
+
+Før vi henter bildet eller teksten sjekker vi om de ligger i state, om de gjør det slipper vi å bruke Fetch og returnerer heller bare det som ligger i state. Om vi ikke finner det, bruker vi Fetch til å hente som vi da setter i state. Siden vi bare lagrer ting i state vil ikke klienten holde på dataen mellom reloads av siden. For å holde på dataen på tvers av besøk måtte vi brukt window.localStorage eller lignende. 
 
 **Responsive web design:**
 
