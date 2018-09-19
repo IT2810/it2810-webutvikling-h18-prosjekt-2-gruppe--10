@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import CategoryMenu from './CategoryMenu';
-import TabMenu from "./TabMenu.js";
-import Sound from "./Sound.js";
-import ImageComp from "./ImageComp.js"
-import TextComp from "./TextComp.js"
+import CategoryMenu from './components/CategoryMenu';
+import TabMenu from "./components/TabMenu";
+import Sound from "./components/Sound";
+import Image from "./components/Image"
+import Text from "./components/Text"
 
 
 class App extends Component {
@@ -108,8 +108,8 @@ class App extends Component {
 
         {/* Komponenter for medier */}
         <div className="contentContainer">
-          <ImageComp image={image}/>
-          <TextComp text={text}/>
+          <Image image={image}/>
+          <Text text={text}/>
           <Sound category={this.state.soundCategory} filename={this.state.tabIndex} />
         </div>
 
