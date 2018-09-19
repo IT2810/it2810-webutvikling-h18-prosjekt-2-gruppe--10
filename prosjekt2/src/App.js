@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import CategoryMenu from './CategoryMenu';
 import "./App.css";
+import CategoryMenu from './CategoryMenu';
 import TabMenu from "./TabMenu.js";
+import ImageComp from "./ImageComp.js"
 
 class App extends Component {
   constructor(props) {
@@ -102,10 +103,7 @@ class App extends Component {
         <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex}/>
 
         <div className="contentContainer">
-          {/* Setter teksten til svg-filen rett inn i HTML-strukturen */}
-          <div className="image"
-            dangerouslySetInnerHTML={{ __html: image ? image : "Loading" }}
-          />
+          <ImageComp image={image}/>
 
           <div className="text">
             <p><i>{text.body}</i></p>
