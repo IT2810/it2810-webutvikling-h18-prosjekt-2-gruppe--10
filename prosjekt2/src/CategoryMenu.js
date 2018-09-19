@@ -4,7 +4,7 @@ import "./App.css";
 const CategoryMenu = ({showInMobile, onChangeFunc}) => {
 
     return (
-        
+
         <div className={showInMobile ? "categories open": "categories"}>
             <h3>Image Category</h3>
             <form onChange={e => {onChangeFunc("imageCategory", e.target.value)}}>

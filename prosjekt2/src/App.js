@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import CategoryMenu from './CategoryMenu';
 import "./App.css";
+import CategoryMenu from './CategoryMenu';
 import TabMenu from "./TabMenu.js";
 import Sound from "./Sound.js";
+import ImageComp from "./ImageComp.js"
+
 
 class App extends Component {
   constructor(props) {
@@ -79,6 +81,7 @@ class App extends Component {
     }
   };
 
+  // Brukes til endre aktiv kategori (this.state) når bruker klikker på annen kategori
   handleCategoryChange = (category, value) => {
     this.setState({
       [category]: value
@@ -96,13 +99,13 @@ class App extends Component {
           <div className={this.state.showMobileMenu ? "mobileMenuButton open" : "mobileMenuButton"} onClick={() => this.setState({ showMobileMenu: !this.state.showMobileMenu })} />
           <h1 className="App-title"> Project 2 </h1>
         </div>
-        <CategoryMenu showInMobile={this.state.showMobileMenu} onChangeFunc={this.handleCategoryChange} />
-        <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex} />
+        {/* Komponent som henter inn medievalgene fra CategoryMenu */}
+        <CategoryMenu showInMobile={this.state.showMobileMenu} onChangeFunc={this.handleCategoryChange}/>
+        {/* Komponent som henter inn tabsene fra TabMenu */}
+        <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex}/>
 
         <div className="contentContainer">
-          <div className="image"
-            dangerouslySetInnerHTML={{ __html: image ? image : "Loading" }}
-          />
+          <ImageComp image={image}/>
 
           <div className="text">
             <p><i>{text.body}</i></p>
