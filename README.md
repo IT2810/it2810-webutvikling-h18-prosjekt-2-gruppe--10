@@ -1,5 +1,5 @@
 # IT2810 Webutvikling H2018 Prosjekt-2 Gruppe 10
-Krav til funksjon
+##Krav til funksjon
 
 * * *
 
@@ -16,7 +16,7 @@ Krav til funksjon
 
 * Bilder, tekst og lyd er hentet helt uavhengig av hverandre. Vi er tre personer som jobber på dette prosjektet, derfor ble det et naturlig valg at en person hentet bilder, en annen hentet tekst og den siste hentet lyd. Alle mediene ble lagt inn egne mapper i filstrukturen for å lettest hente de ut etter ønsket kategori. Dette samt å sette opp en standard react-app, var det første som ble gjort. Disse mediefilene er hentet fra ulike gratis-nettsider med tanke på at siden til tider kan være åpen.
 
-Krav til teknologi
+##Krav til teknologi
 
 * * *
 
@@ -63,7 +63,7 @@ Til å utføre Ajax-kall brukte vi Fetch-apiet siden det er innebygget og har go
 
 * Testet for mobiler med tregt nett hvor bildene tar lenger tid for å lastes inn, ved å teste dette fant vi ut at når bildet skal fetches kommer ikke dette opp ved treg 3G med det første. Hvis det hadde vært mer relevant for denne oppgaven ville vi valgt å gjøre endringer for å gi bruker best opplevelse mens man venter.
 
-Kilder
+##Kilder
 
 * * *
 
