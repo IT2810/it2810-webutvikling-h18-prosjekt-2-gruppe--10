@@ -78,6 +78,7 @@ class App extends Component {
     }
   };
 
+  // Brukes til endre aktiv kategori (this.state) når bruker klikker på annen kategori
   handleCategoryChange = (category, value) => {
     this.setState({
       [category]: value
@@ -95,10 +96,13 @@ class App extends Component {
           <div className={this.state.showMobileMenu ? "mobileMenuButton open" : "mobileMenuButton"} onClick={() => this.setState({showMobileMenu: !this.state.showMobileMenu})}/>
           <h1 className="App-title"> Project 2 </h1>
         </div>
+        {/* Komponent som henter inn medievalgene fra CategoryMenu */}
         <CategoryMenu showInMobile={this.state.showMobileMenu} onChangeFunc={this.handleCategoryChange}/>
+        {/* Komponent som henter inn tabsene fra TabMenu */}
         <TabMenu handleClick={this.handleClick} activeTab={this.state.tabIndex}/>
 
         <div className="contentContainer">
+          {/* Setter teksten til svg-filen rett inn i HTML-strukturen */}
           <div className="image"
             dangerouslySetInnerHTML={{ __html: image ? image : "Loading" }}
           />
