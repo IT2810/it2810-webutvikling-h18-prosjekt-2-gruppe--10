@@ -48,6 +48,10 @@
   background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff');
 }
 
+.mobileMenuButton.open {
+  background-image: url('http://www.oscor.com/wp-content/themes/oscor2.0/img/close_icon_white.svg');
+}
+
 /* Container for medier */
 .contentContainer {
   display: grid;
