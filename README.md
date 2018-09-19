@@ -80,5 +80,3 @@ Lyd:
 
 [https://freesound.org](https://freesound.org)
 
-Dokumentasjon.md
-Viser Dokumentasjon.md.
