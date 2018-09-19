@@ -72,6 +72,7 @@
 /* Style for aktiv tab */
 .active {
   background-color: #477187;
+  font-weight: 500;
 }
 
 /* Style for inaktiv tab */
