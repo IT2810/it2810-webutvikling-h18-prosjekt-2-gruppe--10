@@ -23,15 +23,15 @@
 
 **React:**
 
-Vi brukte create-react-app. Funker fint og man kommer veldig raskt i gang. Måten vi strukturerte appen på var å holde staten i klassen App for så å bruke *stateless function components* til de fleste elementene, dette gjorde vi fordi det er en relativt enkel side uten mye state. Og siden komponentene ikke trengte state eller lifecycle-funksjoner ga det mer mening å skrive dem som dette og sende inn nødvendig data som props. Om appen skulle hatt mer funksjonalitet, eller om vi hadde laget siden på nytt, hadde vi gitt komponentene egen state samt flyttet tilhørende funksjoner inn.
+* Vi brukte create-react-app. Funker fint og man kommer veldig raskt i gang. Måten vi strukturerte appen på var å holde staten i klassen App for så å bruke *stateless function components* til de fleste elementene, dette gjorde vi fordi det er en relativt enkel side uten mye state. Og siden komponentene ikke trengte state eller lifecycle-funksjoner ga det mer mening å skrive dem som dette og sende inn nødvendig data som props. Om appen skulle hatt mer funksjonalitet, eller om vi hadde laget siden på nytt, hadde vi gitt komponentene egen state samt flyttet tilhørende funksjoner inn.
 
 **ES6:**
 
-Vi skrev alle våre funksjoner som "public class field" i ES6-notasjon, altså som felter inn i App-klassen, dette gjør at scopet er mye lettere å holde styr på og man slipper å binde funksjonene. Grunnen til at man slipper å binde disse arrow-funksjonene er at de ikke har egen *this *og siden de er skrevet inne i klassen så refererer *this* til den. 
+* Vi skrev alle våre funksjoner som "public class field" i ES6-notasjon, altså som felter inn i App-klassen, dette gjør at scopet er mye lettere å holde styr på og man slipper å binde funksjonene. Grunnen til at man slipper å binde disse arrow-funksjonene er at de ikke har egen *this *og siden de er skrevet inne i klassen så refererer *this* til den. 
 
 **Ajax:**
 
-Til å utføre Ajax-kall brukte vi Fetch-apiet siden det er innebygget og har god støtte hos alle de store nettleserne. Dette funket fint for å hente teksten siden den var lagret i JSON, noe APIet kan tolke. Men for SVG-ene i XML-kode måtte vi tolke det som klartekst for så å "dangerouslySetInnerHTML", som er måten man setter innerHTML i React. Grunnen til at det heter dangerously er at det kan åpne brukerne for XSS-angrep, kort forklart et av de aller vanligste angrepene nettbrukere er utsatt for.
+* Til å utføre Ajax-kall brukte vi Fetch-apiet siden det er innebygget og har god støtte hos alle de store nettleserne. Dette funket fint for å hente teksten siden den var lagret i JSON, noe APIet kan tolke. Men for SVG-ene i XML-kode måtte vi tolke det som klartekst for så å "dangerouslySetInnerHTML", som er måten man setter innerHTML i React. Grunnen til at det heter dangerously er at det kan åpne brukerne for XSS-angrep, kort forklart et av de aller vanligste angrepene nettbrukere er utsatt for.
 
 **Responsive web design:**
 
