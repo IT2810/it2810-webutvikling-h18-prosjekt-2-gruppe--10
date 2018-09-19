@@ -29,7 +29,7 @@ Vi brukte create-react-app. Funker fint og man kommer veldig raskt i gang. Måte
 
 Vi skrev alle våre funksjoner som "public class field" i ES6-notasjon, altså som felter inn i App-klassen, dette gjør at scopet er mye lettere å holde styr på og man slipper å binde funksjonene. Grunnen til at man slipper å binde disse arrow-funksjonene er at de ikke har egen *this *og siden de er skrevet inne i klassen så refererer *this* til den. 
 
-**Ajax: **
+**Ajax:**
 
 Til å utføre Ajax-kall brukte vi Fetch-apiet siden det er innebygget og har god støtte hos alle de store nettleserne. Dette funket fint for å hente teksten siden den var lagret i JSON, noe APIet kan tolke. Men for SVG-ene i XML-kode måtte vi tolke det som klartekst for så å "dangerouslySetInnerHTML", som er måten man setter innerHTML i React. Grunnen til at det heter dangerously er at det kan åpne brukerne for XSS-angrep, kort forklart et av de aller vanligste angrepene nettbrukere er utsatt for.
 
